@@ -1,0 +1,12 @@
+server:
+  port: 9902
+spring:
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${server.port}
+management:
+  server:
+    port: ${server.port}
+  security:
+    enabled: false

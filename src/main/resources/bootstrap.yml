@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: myApp
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      #Enable Consul Configuration, create key as config/myApp/my/prop
+      config:
+        enabled: true
+      discovery:
+        #instanceId: ${spring.application.name}:${random.value}
+        #healthCheckPath: /my-health-check
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 20s
+        
